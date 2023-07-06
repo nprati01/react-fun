@@ -4,6 +4,43 @@ import { useState } from "react";
 
 function App() {
   const [role, setRole] = useState();
+  const [employees, setEmployees] = useState([
+    {
+      name: 'Kale',
+      role: 'Developer',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+    {
+      name: 'Broccli',
+      role: 'Developer',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+    {
+      name: 'Carrot',
+      role: 'Developer',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+    {
+      name: 'Bob',
+      role: 'The Builder',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+    {
+      name: 'Kale',
+      role: 'CTO',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+    {
+      name: 'Jessipuh',
+      role: 'Project Manager',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+    {
+      name: 'Andrew',
+      role: 'Engineer manager',
+      img: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg',
+    },
+  ])
 
   console.log("we are about to list the employees");
   const showEmployees = true;
@@ -19,10 +56,14 @@ function App() {
             }}
           />
           <div className="flex flex-wrap justify center">
-            <Employee name="Cale" role="intern" />
-            <Employee name="Abby" role ={role} />
-            <Employee name="John" />
-            <Employee />
+            {employees.map((employee) => {
+              console.log(employee)
+              return(
+                <Employee name={employee.name} role={employee.role} img={employee.img} />
+                )
+
+
+            })}
 
           </div>
 
